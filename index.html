@@ -9,11 +9,18 @@
     <meta name="description" content="Jumat, 26 Desember 2025. Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami.">
     <meta name="author" content="Armand & Bintang">
 
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/D4AF37/wedding-rings.png">
+
     <!-- OPEN GRAPH / FACEBOOK / WHATSAPP -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="The Wedding of Armand & Bintang">
     <meta property="og:description" content="Jumat, 26 Desember 2025. Save The Date!">
     <meta property="og:image" content="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG">
+
+    <!-- IMAGE PRELOADING (PERFORMANCE OPTIMIZATION) -->
+    <!-- Preload cover image for instant rendering -->
+    <link rel="preload" as="image" href="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -189,8 +196,10 @@
             <!-- Arch Image Frame -->
             <div class="relative w-64 h-80 md:w-80 md:h-96 mb-8 mt-4 md:mt-0 animate-float">
                 <div class="absolute inset-0 border-2 border-brand-gold rounded-t-full transform translate-x-3 translate-y-3"></div>
+                <!-- Performance Optimization: Added fetchpriority="high" for LCP image -->
                 <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/IMG_1724.JPG" 
                      class="w-full h-full object-cover rounded-t-full shadow-xl relative z-10" alt="Couple"
+                     fetchpriority="high"
                      onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
             </div>
 
@@ -220,7 +229,7 @@
         <section id="couple" class="py-16 md:py-24 px-4 bg-white relative">
             <div class="container mx-auto max-w-5xl">
                 <div class="text-center mb-12 md:mb-16 fade-in-up">
-                    <img src="https://img.icons8.com/ios/50/D4AF37/wedding-rings.png" class="h-10 md:h-12 mx-auto mb-4 animate-bounce" alt="Rings">
+                    <img src="https://img.icons8.com/ios/50/D4AF37/wedding-rings.png" class="h-10 md:h-12 mx-auto mb-4 animate-bounce" alt="Rings" loading="lazy">
                     <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark">Mempelai Pria & Wanita</h2>
                 </div>
 
@@ -228,7 +237,9 @@
                     <!-- Groom -->
                     <div class="flex flex-col items-center text-center fade-in-up group w-full md:w-1/3 px-4">
                         <div class="w-40 h-40 md:w-64 md:h-64 rounded-full overflow-hidden border-[3px] md:border-4 border-brand-cream shadow-xl mb-4 md:mb-6 transform group-hover:scale-105 transition duration-500">
+                            <!-- Performance Optimization: Added loading="lazy" -->
                             <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            loading="lazy"
                             onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
                         </div>
                         <h3 class="font-serif text-2xl md:text-3xl font-bold text-brand-gold mb-1 md:mb-2">Armand Maulana</h3>
@@ -249,7 +260,9 @@
                     <!-- Bride -->
                     <div class="flex flex-col items-center text-center fade-in-up group w-full md:w-1/3 px-4">
                         <div class="w-40 h-40 md:w-64 md:h-64 rounded-full overflow-hidden border-[3px] md:border-4 border-brand-cream shadow-xl mb-4 md:mb-6 transform group-hover:scale-105 transition duration-500">
+                            <!-- Performance Optimization: Added loading="lazy" -->
                             <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            loading="lazy"
                             onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
                         </div>
                         <h3 class="font-serif text-2xl md:text-3xl font-bold text-brand-gold mb-1 md:mb-2">Bintang Sirius</h3>
@@ -332,21 +345,24 @@
                 <!-- Masonry Grid: 2 cols mobile, 4 cols desktop -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 px-1">
                     <div class="fade-in-up space-y-3 md:space-y-4">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-48 md:h-80 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300">
+                        <!-- Performance Optimization: Added loading="lazy" -->
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-48 md:h-80 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300"
+                        loading="lazy">
                         <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1705.JPG" class="w-full h-32 md:h-56 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300"
+                        loading="lazy"
                         onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
                     </div>
                     <div class="fade-in-up space-y-3 md:space-y-4 pt-4 md:pt-0">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG" class="w-full h-32 md:h-56 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1724.JPG" class="w-full h-48 md:h-80 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG" class="w-full h-32 md:h-56 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1724.JPG" class="w-full h-48 md:h-80 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy">
                     </div>
                     <!-- Duplicate for demo fullness on desktop, hide on mobile to save space -->
                     <div class="fade-in-up space-y-4 hidden md:block pt-12">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy">
                     </div>
                     <div class="fade-in-up space-y-4 hidden md:block">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" class="w-full h-40 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" class="w-full h-40 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -366,7 +382,7 @@
                          <!-- Decorative Circle -->
                         <div class="absolute -top-10 -right-10 w-20 h-20 bg-blue-50 rounded-full opacity-50"></div>
                         
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/2560px-Bank_Central_Asia.svg.png" class="h-6 md:h-10 mb-4 md:mb-6 object-contain group-hover:scale-110 transition duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/2560px-Bank_Central_Asia.svg.png" class="h-6 md:h-10 mb-4 md:mb-6 object-contain group-hover:scale-110 transition duration-300" loading="lazy">
                         <p class="text-gray-400 text-[10px] md:text-xs uppercase tracking-widest mb-1">Nomor Rekening</p>
                         <p class="font-mono text-xl md:text-2xl font-bold text-gray-800 mb-2 tracking-wider">1234567890</p>
                         <p class="text-xs md:text-sm font-bold text-brand-gold mb-6">a.n Armand Maulana</p>
@@ -380,7 +396,7 @@
                         <!-- Decorative Circle -->
                         <div class="absolute -top-10 -left-10 w-20 h-20 bg-yellow-50 rounded-full opacity-50"></div>
 
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bank_Mandiri_logo_2016.svg/2560px-Bank_Mandiri_logo_2016.svg.png" class="h-6 md:h-10 mb-4 md:mb-6 object-contain group-hover:scale-110 transition duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bank_Mandiri_logo_2016.svg/2560px-Bank_Mandiri_logo_2016.svg.png" class="h-6 md:h-10 mb-4 md:mb-6 object-contain group-hover:scale-110 transition duration-300" loading="lazy">
                         <p class="text-gray-400 text-[10px] md:text-xs uppercase tracking-widest mb-1">Nomor Rekening</p>
                         <p class="font-mono text-xl md:text-2xl font-bold text-gray-800 mb-2 tracking-wider">0987654321</p>
                         <p class="text-xs md:text-sm font-bold text-brand-gold mb-6">a.n Bintang Sirius</p>
