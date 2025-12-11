@@ -179,15 +179,6 @@
         </div>
     </section>
 
-    <!-- DESKTOP NAVIGATION (Visible on md+) -->
-    <nav id="desktop-nav" class="fixed top-0 left-0 w-full z-40 bg-white/80 backdrop-blur-md shadow-sm py-4 hidden md:hidden transition-all duration-500 transform -translate-y-full justify-center gap-8">
-        <a href="#home" class="font-sans text-sm hover:text-brand-gold uppercase tracking-widest transition-colors font-medium">Home</a>
-        <a href="#couple" class="font-sans text-sm hover:text-brand-gold uppercase tracking-widest transition-colors font-medium">Mempelai</a>
-        <a href="#event" class="font-sans text-sm hover:text-brand-gold uppercase tracking-widest transition-colors font-medium">Acara</a>
-        <a href="#gallery" class="font-sans text-sm hover:text-brand-gold uppercase tracking-widest transition-colors font-medium">Galeri</a>
-        <a href="#gift" class="font-sans text-sm hover:text-brand-gold uppercase tracking-widest transition-colors font-medium">Gift</a>
-    </nav>
-
     <!-- MAIN CONTENT -->
     <main id="main-content" class="w-full opacity-0 transition-opacity duration-1000">
 
@@ -459,7 +450,6 @@
             const cover = document.getElementById('cover');
             const mainContent = document.getElementById('main-content');
             const bottomNav = document.getElementById('bottom-nav');
-            const desktopNav = document.getElementById('desktop-nav');
             const musicControl = document.getElementById('music-control');
             
             // Slide cover up
@@ -470,12 +460,10 @@
             
             // Show Navs
             bottomNav.classList.remove('hidden');
-            desktopNav.classList.remove('hidden');
             
             setTimeout(() => {
                 // Show bottom nav with delay
                 bottomNav.classList.remove('translate-y-[150%]');
-                desktopNav.classList.remove('-translate-y-full');
             }, 300);
 
             // Show Music
