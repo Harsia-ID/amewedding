@@ -305,9 +305,10 @@
                             <span>08:00 - 10:00 WIB</span>
                         </div>
                         <p class="text-sm md:text-base opacity-90 mb-6 leading-relaxed">KUA Tambak<br>Banyumas, Jawa Tengah, Indonesia</p>
-                        <a href="https://maps.google.com" target="_blank" class="inline-block bg-white/20 hover:bg-brand-gold px-6 py-2.5 rounded-full text-xs md:text-sm transition font-sans group w-full md:w-auto font-bold border border-white/30">
+                        <!-- Updated Map Button -->
+                        <button onclick="openMap('akad')" class="inline-block bg-white/20 hover:bg-brand-gold px-6 py-2.5 rounded-full text-xs md:text-sm transition font-sans group w-full md:w-auto font-bold border border-white/30 cursor-pointer">
                             <i class="fas fa-map-marker-alt mr-2 group-hover:animate-bounce"></i> Google Maps
-                        </a>
+                        </button>
                     </div>
 
                     <!-- Resepsi -->
@@ -319,9 +320,10 @@
                             <span>10:00 - Selesai</span>
                         </div>
                         <p class="text-sm md:text-base opacity-90 mb-6 leading-relaxed">Taman Serut Lik Cip<br>Tambak, Banyumas, Jawa Tengah, Indonesia</p>
-                        <a href="https://maps.google.com" target="_blank" class="inline-block bg-white/20 hover:bg-brand-gold px-6 py-2.5 rounded-full text-xs md:text-sm transition font-sans group w-full md:w-auto font-bold border border-white/30">
+                        <!-- Updated Map Button -->
+                        <button onclick="openMap('resepsi')" class="inline-block bg-white/20 hover:bg-brand-gold px-6 py-2.5 rounded-full text-xs md:text-sm transition font-sans group w-full md:w-auto font-bold border border-white/30 cursor-pointer">
                             <i class="fas fa-map-marker-alt mr-2 group-hover:animate-bounce"></i> Google Maps
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -334,7 +336,7 @@
             </div>
         </section>
 
-        <!-- 5. GALLERY (Adaptive Grid) -->
+        <!-- 5. GALLERY (Pinterest / Masonry Layout) -->
         <section id="gallery" class="py-16 md:py-24 px-4 bg-brand-cream">
             <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-8 md:mb-12 fade-in-up">
@@ -343,27 +345,38 @@
                     <p class="mt-4 text-xs md:text-sm text-gray-500">Klik pada foto untuk memperbesar</p>
                 </div>
 
-                <!-- Masonry Grid: 2 cols mobile, 4 cols desktop -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 px-1">
-                    <div class="fade-in-up space-y-3 md:space-y-4">
-                        <!-- Performance Optimization: Added loading="lazy" -->
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-48 md:h-80 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300"
-                        loading="lazy">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1705.JPG" class="w-full h-32 md:h-56 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300"
-                        loading="lazy"
+                <!-- Pinterest / Masonry Layout using CSS Columns -->
+                <div class="columns-2 md:columns-4 gap-3 px-1 space-y-3">
+                    <!-- Image 1 -->
+                    <div class="break-inside-avoid mb-3 fade-in-up">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300"
+                        loading="lazy" onclick="openLightbox(this.src)">
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="break-inside-avoid mb-3 fade-in-up">
+                         <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1705.JPG" class="w-full rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300"
+                        loading="lazy" onclick="openLightbox(this.src)"
                         onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
                     </div>
-                    <div class="fade-in-up space-y-3 md:space-y-4 pt-4 md:pt-0">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG" class="w-full h-32 md:h-56 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1724.JPG" class="w-full h-48 md:h-80 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy">
+                    <!-- Image 3 -->
+                    <div class="break-inside-avoid mb-3 fade-in-up">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG" class="w-full rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy" onclick="openLightbox(this.src)">
                     </div>
-                    <!-- Duplicate for demo fullness on desktop, hide on mobile to save space -->
-                    <div class="fade-in-up space-y-4 hidden md:block pt-12">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy">
+                    <!-- Image 4 -->
+                    <div class="break-inside-avoid mb-3 fade-in-up">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1724.JPG" class="w-full rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy" onclick="openLightbox(this.src)">
                     </div>
-                    <div class="fade-in-up space-y-4 hidden md:block">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" class="w-full h-40 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy">
+                    <!-- Image 5 -->
+                    <div class="break-inside-avoid mb-3 fade-in-up">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" class="w-full rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy" onclick="openLightbox(this.src)">
+                    </div>
+                    <!-- Image 6 -->
+                    <div class="break-inside-avoid mb-3 fade-in-up">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" class="w-full rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy" onclick="openLightbox(this.src)">
+                    </div>
+                    <!-- Reuse images for more content if needed -->
+                    <div class="break-inside-avoid mb-3 fade-in-up hidden md:block">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full rounded-lg shadow-md hover:opacity-90 transition cursor-pointer transform hover:scale-[1.02] duration-300" loading="lazy" onclick="openLightbox(this.src)">
                     </div>
                 </div>
             </div>
@@ -416,6 +429,26 @@
     <div id="lightbox" class="fixed inset-0 z-[90] bg-black/95 hidden flex justify-center items-center opacity-0 transition-opacity duration-300 backdrop-blur-sm" onclick="closeLightbox()">
         <button class="absolute top-6 right-6 text-white/80 text-4xl cursor-pointer hover:text-white transition w-10 h-10 flex items-center justify-center bg-black/20 rounded-full">&times;</button>
         <img id="lightbox-img" src="" class="max-h-[85vh] max-w-[95vw] rounded-lg shadow-2xl transform scale-95 transition-transform duration-300 object-contain" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- MAP MODAL -->
+    <div id="map-modal" class="fixed inset-0 z-[100] bg-black/60 hidden flex justify-center items-center opacity-0 transition-opacity duration-300 backdrop-blur-sm px-4" onclick="closeMap()">
+        <div class="relative w-full max-w-2xl bg-white border border-brand-gold/50 rounded-2xl p-1 shadow-2xl transform scale-95 transition-transform duration-300 overflow-hidden" id="map-content" onclick="event.stopPropagation()">
+            
+            <button onclick="closeMap()" class="absolute top-2 right-2 z-10 text-brand-dark bg-white/80 w-8 h-8 rounded-full hover:bg-brand-gold hover:text-white transition flex items-center justify-center">&times;</button>
+            
+            <h3 id="map-title" class="font-serif text-2xl text-brand-gold text-center py-4 tracking-wide font-bold">Lokasi</h3>
+            
+            <div class="relative w-full h-[300px] md:h-[400px] bg-gray-200 border-y border-brand-gold/20">
+                <iframe id="map-frame" class="w-full h-full" frameborder="0" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <div class="p-6 text-center">
+                <a id="map-link" href="#" target="_blank" class="inline-block px-8 py-3 bg-brand-gold text-white font-sans text-xs font-bold tracking-[0.2em] uppercase hover:bg-brand-dark transition rounded-full shadow-md">
+                    Buka di Google Maps
+                </a>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -564,19 +597,14 @@
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
-        // Setup gallery images
-        document.querySelectorAll('#gallery img').forEach(img => {
-            img.classList.add('cursor-pointer'); // Ensure cursor indicates clickable
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightbox.classList.remove('hidden');
-                // Small delay to allow display change to render before opacity transition
-                setTimeout(() => {
-                    lightbox.classList.remove('opacity-0');
-                    lightboxImg.classList.remove('scale-95');
-                }, 10);
-            });
-        });
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.remove('hidden');
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                lightboxImg.classList.remove('scale-95');
+            }, 10);
+        }
 
         function closeLightbox() {
             lightbox.classList.add('opacity-0');
@@ -617,6 +645,56 @@
                     petal.remove();
                 }, 10000); 
             }, interval); 
+        }
+
+        // 10. MAP POPUP LOGIC
+        const mapData = {
+            akad: {
+                title: "Akad Nikah",
+                embedUrl: "https://maps.google.com/maps?q=KUA+Tambak+Banyumas+Jawa+Tengah&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                externalLink: "https://share.google/Lwoke1Np7ogb3Wq42" 
+            },
+            resepsi: {
+                title: "Resepsi",
+                embedUrl: "https://maps.google.com/maps?q=Taman+Serut+Lik+Cip+Tambak+Banyumas&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                externalLink: "https://maps.app.goo.gl/VedhDyhz3Hz5VFJp8"
+            }
+        };
+
+        function openMap(type) {
+            const modal = document.getElementById('map-modal');
+            const content = document.getElementById('map-content');
+            const frame = document.getElementById('map-frame');
+            const title = document.getElementById('map-title');
+            const link = document.getElementById('map-link');
+            
+            const data = mapData[type];
+            
+            title.innerText = data.title;
+            frame.src = data.embedUrl;
+            link.href = data.externalLink;
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeMap() {
+            const modal = document.getElementById('map-modal');
+            const content = document.getElementById('map-content');
+            const frame = document.getElementById('map-frame');
+            
+            modal.classList.add('opacity-0');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                frame.src = ''; 
+            }, 300);
         }
 
     </script>
