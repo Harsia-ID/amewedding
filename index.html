@@ -272,26 +272,27 @@
                 <div class="text-center mb-12 fade-in-up">
                     <h2 class="font-serif text-4xl text-brand-dark">Galeri Foto</h2>
                     <div class="h-1 w-20 bg-brand-gold mx-auto mt-4"></div>
+                    <p class="mt-4 text-sm text-gray-500">Klik pada foto untuk memperbesar</p>
                 </div>
 
                 <!-- Masonry Grid: 2 cols mobile, 4 cols desktop -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                     <div class="fade-in-up space-y-4">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-64 md:h-80 object-cover rounded-lg shadow-md hover:opacity-90 transition">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1705.JPG" class="w-full h-40 md:h-56 object-cover rounded-lg shadow-md hover:opacity-90 transition"
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-64 md:h-80 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1705.JPG" class="w-full h-40 md:h-56 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer"
                         onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
                     </div>
                     <div class="fade-in-up space-y-4 pt-8 md:pt-0">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG" class="w-full h-40 md:h-56 object-cover rounded-lg shadow-md hover:opacity-90 transition">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1724.JPG" class="w-full h-64 md:h-80 object-cover rounded-lg shadow-md hover:opacity-90 transition">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG" class="w-full h-40 md:h-56 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1724.JPG" class="w-full h-64 md:h-80 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer">
                     </div>
                     <!-- Duplicate for demo fullness on desktop -->
                     <div class="fade-in-up space-y-4 hidden md:block pt-12">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-90 transition">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer">
                     </div>
                     <div class="fade-in-up space-y-4 hidden md:block">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" class="w-full h-40 object-cover rounded-lg shadow-md hover:opacity-90 transition">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-90 transition">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" class="w-full h-40 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-90 transition cursor-pointer">
                     </div>
                 </div>
             </div>
@@ -371,6 +372,12 @@
     <div id="toast" class="fixed top-24 md:top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-8 py-4 rounded-full shadow-2xl z-[80] transition-opacity duration-300 opacity-0 pointer-events-none flex items-center gap-3">
         <i class="fas fa-check-circle text-green-400 text-xl"></i>
         <span class="text-base font-sans font-bold">Nomor Rekening Disalin</span>
+    </div>
+
+    <!-- GALLERY LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 z-[90] bg-black/90 hidden flex justify-center items-center opacity-0 transition-opacity duration-300" onclick="closeLightbox()">
+        <button class="absolute top-4 right-4 text-white text-4xl cursor-pointer hover:text-brand-gold transition">&times;</button>
+        <img id="lightbox-img" src="" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-2xl transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
     </div>
 
     <script>
@@ -511,6 +518,33 @@
                 <div class="${box}"><span class="${numStyle}">${seconds}</span><span class="${labelStyle}">Dtk</span></div>
             `;
         }, 1000);
+
+        // 8. GALLERY LIGHTBOX LOGIC
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        // Setup gallery images
+        document.querySelectorAll('#gallery img').forEach(img => {
+            img.classList.add('cursor-pointer'); // Ensure cursor indicates clickable
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.remove('hidden');
+                // Small delay to allow display change to render before opacity transition
+                setTimeout(() => {
+                    lightbox.classList.remove('opacity-0');
+                    lightboxImg.classList.remove('scale-95');
+                }, 10);
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            lightboxImg.classList.add('scale-95');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightboxImg.src = '';
+            }, 300); // Match transition duration
+        }
 
     </script>
 </body>
