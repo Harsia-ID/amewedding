@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Armand & Bintang</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Konfigurasi Tailwind Custom -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'wedding-gold': '#C5A059',
+                        'wedding-sage': '#8DA399',
+                        'wedding-dark': '#1A202C',
+                        'wedding-cream': '#F9F7F2',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                        script: ['"Great Vibes"', 'cursive'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F7F2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C5A059;
+            border-radius: 4px;
+        }
+
+        /* Decorative Background Pattern */
+        .bg-pattern {
+            background-color: #F9F7F2;
+            background-image: radial-gradient(#C5A059 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+        }
+
+        /* Animation Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Image Position Tweaks for specific photos if needed */
+        .obj-pos-top { object-position: top; }
+        .obj-pos-center { object-position: center; }
+    </style>
+</head>
+<body class="bg-wedding-cream text-wedding-dark overflow-hidden font-sans antialiased">
+
+    <!-- AUDIO PLAYER -->
+    <audio id="bg-music" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- FAB Music Control -->
+    <div id="music-control" class="fixed bottom-6 right-6 z-50 hidden cursor-pointer transition-all hover:scale-110">
+        <div class="bg-wedding-gold w-12 h-12 rounded-full flex items-center justify-center shadow-lg text-white animate-spin-slow" id="music-icon-wrapper">
+            <i class="fas fa-compact-disc text-2xl"></i>
+        </div>
+    </div>
+
+    <!-- 1. COVER / WELCOME SCREEN -->
+    <!-- Menggunakan IMG_1749.JPG sebagai background cover -->
+    <section id="cover" class="fixed inset-0 z-[60] bg-cover bg-center flex flex-col items-center justify-center text-white transition-transform duration-1000 ease-in-out h-screen w-screen"
+        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG');">
+        
+        <div class="text-center px-4 animate-float w-full max-w-4xl">
+            <p class="mb-4 tracking-widest uppercase text-sm md:text-base opacity-90">The Wedding Of</p>
+            <h1 class="font-script text-6xl md:text-8xl mb-6 text-wedding-gold drop-shadow-lg">Armand & Bintang</h1>
+            
+            <!-- Dynamic Guest Name Section -->
+            <div class="mb-8 text-lg font-serif italic text-gray-100 bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 inline-block mx-auto min-w-[300px]">
+                <p class="mb-2 text-sm not-italic uppercase tracking-wide">Kepada Bapak/Ibu/Saudara/i:</p>
+                <div id="guest-name" class="text-3xl font-bold font-serif text-white my-3 drop-shadow-md break-words">
+                    Tamu Undangan
+                </div>
+                <p class="text-sm opacity-90">"Mohon maaf apabila ada kesalahan penulisan nama"</p>
+            </div>
+            
+            <div class="mt-4">
+                <button onclick="openInvitation()" class="bg-wedding-gold hover:bg-white hover:text-wedding-gold text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg flex items-center gap-2 mx-auto">
+                    <i class="fas fa-envelope-open-text"></i> Buka Undangan
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main id="main-content" class="opacity-0 transition-opacity duration-1000">
+
+        <!-- 2. HERO SECTION -->
+        <section class="min-h-screen flex flex-col items-center justify-center relative bg-pattern pt-20 pb-10">
+            <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent opacity-50"></div>
+            
+            <div class="text-center z-10 px-4 reveal-on-scroll">
+                <p class="text-wedding-sage tracking-[0.2em] uppercase text-sm mb-4">Save The Date</p>
+                <h1 class="font-serif text-5xl md:text-7xl mb-4 text-wedding-dark">Armand & Bintang</h1>
+                <p class="font-light text-xl mb-8">Jumat, 26 Desember 2025</p>
+                
+                <!-- Ornamental Divider -->
+                <div class="flex items-center justify-center gap-4 mb-8 opacity-60">
+                    <div class="h-[1px] w-16 bg-wedding-gold"></div>
+                    <i class="fas fa-heart text-wedding-gold"></i>
+                    <div class="h-[1px] w-16 bg-wedding-gold"></div>
+                </div>
+
+                <!-- Main Photo: IMG_1724.JPG -->
+                <div class="w-64 h-80 md:w-80 md:h-96 mx-auto rounded-t-full border-4 border-wedding-gold/30 p-2 shadow-xl bg-white">
+                    <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/IMG_1724.JPG" 
+                         alt="Armand & Bintang" class="w-full h-full object-cover rounded-t-full">
+                </div>
+            </div>
+            
+            <div class="absolute bottom-10 animate-bounce text-wedding-gold">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </div>
+        </section>
+
+        <!-- 3. MEMPELAI (THE COUPLE) -->
+        <section class="py-20 px-4 max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <h2 class="font-script text-5xl text-wedding-gold mb-4">Mempelai</h2>
+                <p class="max-w-xl mx-auto text-gray-600">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."</p>
+                <p class="mt-2 font-bold text-wedding-sage">(QS. Ar-Rum: 21)</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24">
+                
+                <!-- Groom: Armand -->
+                <div class="text-center reveal-on-scroll group">
+                    <div class="relative w-48 h-48 mx-auto mb-6">
+                        <div class="absolute inset-0 rounded-full border-2 border-dashed border-wedding-gold animate-spin-slow"></div>
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" 
+                             class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg relative z-10" alt="Armand">
+                    </div>
+                    <h3 class="font-serif text-3xl font-bold mb-4">Armand Maulana Effendy</h3> 
+                </div>
+
+                <div class="text-4xl text-wedding-gold font-script reveal-on-scroll">&</div>
+
+                <!-- Bride: Bintang -->
+                <div class="text-center reveal-on-scroll">
+                    <div class="relative w-48 h-48 mx-auto mb-6">
+                        <div class="absolute inset-0 rounded-full border-2 border-dashed border-wedding-gold animate-spin-slow"></div>
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" 
+                             class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg relative z-10" alt="Bintang">
+                    </div>
+                    <h3 class="font-serif text-3xl font-bold mb-4">Bintang Sirius</h3> 
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. ACARA (EVENTS) -->
+        <section class="py-20 bg-wedding-dark text-white relative overflow-hidden">
+            <!-- Background Image Overlay with Darkness -->
+            <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG');"></div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <h2 class="font-serif text-4xl mb-4">Rangkaian Acara</h2>
+                    <p class="opacity-80">Kami menantikan kehadiran Anda di hari bahagia kami</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Akad -->
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl text-center transform hover:-translate-y-2 transition duration-300 reveal-on-scroll">
+                        <div class="text-5xl text-wedding-gold mb-4"><i class="fas fa-handshake"></i></div>
+                        <h3 class="font-serif text-2xl font-bold mb-2">Akad Nikah</h3>
+                        <div class="text-wedding-gold font-bold mb-4">08:00 - 10:00 WIB</div>
+                        <p class="text-sm opacity-90 mb-4">
+                            Rumah Bintang<br>
+                            Jawa Tengah, Indonesia
+                        </p>
+                        <a href="https://maps.google.com" target="_blank" class="inline-block border border-white/50 px-6 py-2 rounded-full text-sm hover:bg-white hover:text-wedding-dark transition">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Lokasi
+                        </a>
+                    </div>
+
+                    <!-- Resepsi -->
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl text-center transform hover:-translate-y-2 transition duration-300 reveal-on-scroll">
+                        <div class="text-5xl text-wedding-gold mb-4"><i class="fas fa-glass-cheers"></i></div>
+                        <h3 class="font-serif text-2xl font-bold mb-2">Resepsi</h3>
+                        <div class="text-wedding-gold font-bold mb-4">11:00 - Selesai</div>
+                        <p class="text-sm opacity-90 mb-4">
+                            Rumah Bintang<br>
+                            Jawa Tengah, Indonesia
+                        </p>
+                        <a href="https://maps.google.com" target="_blank" class="inline-block border border-white/50 px-6 py-2 rounded-full text-sm hover:bg-white hover:text-wedding-dark transition">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Lokasi
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Countdown Timer -->
+                <div class="mt-16 text-center reveal-on-scroll">
+                    <h3 class="font-script text-3xl mb-8 text-wedding-gold">Menghitung Hari</h3>
+                    <div class="flex justify-center gap-4 md:gap-8 text-white" id="countdown">
+                        <!-- JS will populate this -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. GALERI -->
+        <section class="py-20 px-4 bg-pattern">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12 reveal-on-scroll">
+                    <h2 class="font-serif text-4xl text-wedding-dark">Galeri Bahagia</h2>
+                    <div class="h-1 w-20 bg-wedding-gold mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="col-span-2 row-span-2 rounded-xl overflow-hidden shadow-lg reveal-on-scroll group h-96">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" alt="Gallery 1">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg reveal-on-scroll group h-48">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" alt="Gallery 2">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg reveal-on-scroll group h-48">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1705.JPG" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 obj-pos-top" alt="Gallery 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. RSVP & WISHES -->
+        <section class="py-20 px-4 bg-white">
+            <div class="max-w-3xl mx-auto bg-wedding-cream rounded-3xl p-8 md:p-12 shadow-2xl relative reveal-on-scroll">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-wedding-sage to-wedding-gold"></div>
+                
+        <!-- 6. WEDDING GIFT / DOMPET DIGITAL (REPLACED RSVP) -->
+        <section class="py-20 px-4 bg-white">
+            <div class="max-w-3xl mx-auto bg-wedding-cream rounded-3xl p-8 md:p-12 shadow-2xl relative reveal-on-scroll">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-wedding-sage to-wedding-gold"></div>
+                
+                <div class="text-center mb-10">
+                    <h2 class="font-serif text-3xl md:text-4xl mb-4 text-wedding-dark">Wedding Gift</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Doa restu Anda merupakan karunia yang sangat berarti bagi kami.<br>
+                        Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.
+                    </p>
+                </div>
+
+                <!-- Bank Accounts Grid -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    
+                    <!-- Bank Account 1: BCA -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col items-center text-center transform hover:-translate-y-1 transition duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/2560px-Bank_Central_Asia.svg.png" alt="BCA" class="h-8 mb-4 object-contain">
+                        <p class="text-sm text-gray-400 mb-1">Nomor Rekening</p>
+                        <p id="rek-bca" class="text-xl font-bold font-mono text-wedding-dark mb-2">1234567890</p>
+                        <p class="text-sm font-bold text-wedding-gold mb-4">a.n Armand Maulana Effendy</p>
+                        <button onclick="copyToClipboard('1234567890')" class="flex items-center gap-2 bg-gray-100 hover:bg-wedding-gold hover:text-white px-4 py-2 rounded-full text-sm transition duration-300">
+                            <i class="fas fa-copy"></i> Salin Nomor
+                        </button>
+                    </div>
+
+                    <!-- Bank Account 2: Mandiri -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col items-center text-center transform hover:-translate-y-1 transition duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bank_Mandiri_logo_2016.svg/2560px-Bank_Mandiri_logo_2016.svg.png" alt="Mandiri" class="h-8 mb-4 object-contain">
+                        <p class="text-sm text-gray-400 mb-1">Nomor Rekening</p>
+                        <p id="rek-mandiri" class="text-xl font-bold font-mono text-wedding-dark mb-2">0987654321</p>
+                        <p class="text-sm font-bold text-wedding-gold mb-4">a.n Bintang Sirius</p>
+                        <button onclick="copyToClipboard('0987654321')" class="flex items-center gap-2 bg-gray-100 hover:bg-wedding-gold hover:text-white px-4 py-2 rounded-full text-sm transition duration-300">
+                            <i class="fas fa-copy"></i> Salin Nomor
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Additional Note -->
+                <div class="mt-8 text-center">
+                    <p class="text-xs text-gray-400 italic">Terima kasih atas tanda kasih yang Anda berikan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FOOTER -->
+        <footer class="bg-wedding-dark text-white py-10 text-center relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="font-script text-4xl text-wedding-gold mb-4">Armand & Bintang</h2>
+                <div class="flex justify-center gap-6 mb-8">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-wedding-gold transition"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="text-xs opacity-40">Created with Love</p>
+            </div>
+        </footer>
+
+    </main>
+    
+    <!-- Notification Modal (Reused for Copy Feedback) -->
+    <div id="notificationModal" class="fixed inset-0 z-[70] flex items-center justify-center bg-black/50 hidden">
+        <div class="bg-white rounded-2xl p-6 max-w-xs w-full mx-4 text-center animate-float">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-check text-xl text-green-600"></i>
+            </div>
+            <h3 class="text-lg font-serif font-bold mb-1">Berhasil Disalin!</h3>
+            <p class="text-gray-500 text-sm mb-4">Nomor rekening telah disalin ke clipboard.</p>
+            <button onclick="closeNotification()" class="bg-wedding-dark text-white px-6 py-2 rounded-lg text-sm hover:bg-wedding-gold transition">Oke</button>
+        </div>
+    </div>
+
+    <script>
+        // --- 0. URL PARAMETER LOGIC FOR GUEST NAME ---
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            // Cek parameter 'to', 'guest', 'u'
+            const guestName = urlParams.get('to') || urlParams.get('guest') || urlParams.get('u');
+            
+            if (guestName) {
+                // Update Cover Name
+                const guestNameElement = document.getElementById('guest-name');
+                if (guestNameElement) {
+                    guestNameElement.innerText = guestName;
+                }
+            }
+        });
+
+        // --- 1. OPEN INVITATION ---
+        const cover = document.getElementById('cover');
+        const mainContent = document.getElementById('main-content');
+        const music = document.getElementById('bg-music');
+        const musicControl = document.getElementById('music-control');
+        const musicIconWrapper = document.getElementById('music-icon-wrapper');
+        let isPlaying = false;
+
+        function openInvitation() {
+            cover.style.transform = 'translateY(-100%)';
+            mainContent.classList.remove('opacity-0');
+            document.body.classList.remove('overflow-hidden');
+            musicControl.classList.remove('hidden');
+            playMusic();
+            initObserver();
+        }
+
+        // --- 2. MUSIC CONTROL ---
+        function playMusic() {
+            music.play().catch(error => {
+                console.log("Autoplay prevented by browser, waiting for interaction.");
+            });
+            isPlaying = true;
+            musicIconWrapper.classList.remove('paused');
+        }
+
+        function toggleMusic() {
+            if (isPlaying) {
+                music.pause();
+                musicIconWrapper.style.animationPlayState = 'paused';
+                musicIconWrapper.innerHTML = '<i class="fas fa-play text-2xl"></i>';
+            } else {
+                music.play();
+                musicIconWrapper.style.animationPlayState = 'running';
+                musicIconWrapper.innerHTML = '<i class="fas fa-compact-disc text-2xl"></i>';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        musicControl.addEventListener('click', toggleMusic);
+
+        // --- 3. COUNTDOWN TIMER (Set to Dec 26, 2025) ---
+        const weddingDate = new Date("December 26, 2025 08:00:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "<div class='text-2xl font-bold'>The Wedding Day!</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const timeBoxClass = "bg-white/20 backdrop-blur rounded-lg p-3 md:p-4 w-16 md:w-24 text-center border border-white/30 shadow-lg";
+            const numberClass = "block text-2xl md:text-4xl font-bold";
+            const labelClass = "text-xs uppercase tracking-wider mt-1";
+
+            document.getElementById("countdown").innerHTML = `
+                <div class="${timeBoxClass}"><span class="${numberClass}">${days}</span><span class="${labelClass}">Hari</span></div>
+                <div class="${timeBoxClass}"><span class="${numberClass}">${hours}</span><span class="${labelClass}">Jam</span></div>
+                <div class="${timeBoxClass}"><span class="${numberClass}">${minutes}</span><span class="${labelClass}">Menit</span></div>
+                <div class="${timeBoxClass}"><span class="${numberClass}">${seconds}</span><span class="${labelClass}">Detik</span></div>
+            `;
+        }, 1000);
+
+        // --- 4. ANIMATION OBSERVER ---
+        function initObserver() {
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // --- 5. WEDDING GIFT HANDLER (COPY FUNCTION) ---
+        function copyToClipboard(text) {
+            // Create a temporary textarea element
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy'); // Fallback for older browsers/iframe contexts
+                showNotification();
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+            
+            document.body.removeChild(textarea);
+        }
+
+        function showNotification() {
+            document.getElementById('notificationModal').classList.remove('hidden');
+        }
+
+        function closeNotification() {
+            document.getElementById('notificationModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
