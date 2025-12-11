@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- PRIMARY META TAGS -->
+    <title>The Wedding of Armand & Bintang</title>
+    <meta name="description" content="Jumat, 26 Desember 2025. Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami.">
+    <meta name="author" content="Armand & Bintang">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/D4AF37/wedding-rings.png">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Wedding of Armand & Bintang">
+    <meta property="og:description" content="Jumat, 26 Desember 2025. Save The Date!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Art Deco Selections (Marcellus, Josefin Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Josefin+Sans:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Konfigurasi Tailwind Custom -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-gold': '#D4AF37', /* Classic Gold */
+                        'brand-black': '#0A0A0A',
+                        'brand-dark': '#151515',
+                        'brand-cream': '#F4F1EA',
+                    },
+                    fontFamily: {
+                        deco: ['"Marcellus"', 'serif'],
+                        sans: ['"Josefin Sans"', 'sans-serif'],
+                        script: ['"Great Vibes"', 'cursive'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 15s linear infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-1000px 0' },
+                            '100%': { backgroundPosition: '1000px 0' }
+                        }
+                    },
+                    backgroundImage: {
+                        'deco-pattern': "url('data:image/svg+xml,%3Csvg width=\\'40\\' height=\\'40\\' viewBox=\\'0 0 40 40\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cpath d=\\'M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20z\\' fill=\\'%23D4AF37\\' fill-opacity=\\'0.05\\' fill-rule=\\'evenodd\\'/%3E%3C/svg%3E')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* --- ART DECO SPECIFICS --- */
+        body {
+            background-color: #0A0A0A;
+            color: #F4F1EA;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Border Styles */
+        .border-deco {
+            border: 1px solid #D4AF37;
+            position: relative;
+        }
+        .border-deco::after {
+            content: '';
+            position: absolute;
+            top: 4px; left: 4px; right: 4px; bottom: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            pointer-events: none;
+        }
+
+        /* Cut Corner Frame (Octagon-ish) */
+        .frame-cut-corner {
+            clip-path: polygon(
+                15% 0, 85% 0, 
+                100% 15%, 100% 85%, 
+                85% 100%, 15% 100%, 
+                0 85%, 0 15%
+            );
+        }
+
+        /* Diamond Frame */
+        .frame-diamond {
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            transform: scale(0.9); /* Prevent cutting off too much */
+        }
+        
+        /* Sunburst Divider */
+        .sunburst-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            position: relative;
+            margin: 2rem 0;
+        }
+        .sunburst-divider::before {
+            content: '♦';
+            color: #D4AF37;
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            background: #0A0A0A;
+            padding: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Glass Art Deco */
+        .glass-deco {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.8);
+        }
+
+        /* Typography */
+        h1, h2, h3 { letter-spacing: 0.15em; text-transform: uppercase; }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; }
+
+        /* Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal-up.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Petal (Gold Flakes instead of Sakura) */
+        .gold-flake {
+            position: fixed; top: -20px;
+            background: #D4AF37;
+            width: 4px; height: 4px;
+            transform: rotate(45deg);
+            opacity: 0; z-index: 40;
+            pointer-events: none;
+            animation: fall linear forwards;
+            box-shadow: 0 0 5px #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-brand-black text-brand-cream antialiased font-sans pb-24 md:pb-0 bg-deco-pattern">
+
+    <!-- AUDIO PLAYER -->
+    <audio id="bg-music" loop>
+        <source src="https://archive.org/download/gending-jawa-kebo-giro/Gending%20Jawa%20-%20Kebo%20Giro.mp3" type="audio/mpeg">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- MUSIC CONTROL -->
+    <div id="music-control" class="fixed top-5 right-5 z-[70] hidden cursor-pointer group active:scale-95 transition-transform">
+        <div class="w-10 h-10 border border-brand-gold bg-black/50 backdrop-blur-md flex items-center justify-center animate-spin-slow rotate-45" id="music-icon-wrapper">
+            <div class="-rotate-45"><i class="fas fa-compact-disc text-brand-gold text-lg"></i></div>
+        </div>
+    </div>
+
+    <!-- 1. COVER / OPENING MODAL -->
+    <section id="cover" class="fixed inset-0 z-[60] flex flex-col justify-between items-center text-white transition-transform duration-1000 ease-[cubic-bezier(0.7,0,0.3,1)] h-[100dvh] w-screen overflow-hidden bg-brand-black">
+        
+        <!-- Frame Border for Cover -->
+        <div class="absolute inset-4 border border-brand-gold/30 pointer-events-none z-20 flex flex-col justify-between">
+            <div class="flex justify-between">
+                <div class="w-8 h-8 border-t border-l border-brand-gold"></div>
+                <div class="w-8 h-8 border-t border-r border-brand-gold"></div>
+            </div>
+            <div class="flex justify-between">
+                <div class="w-8 h-8 border-b border-l border-brand-gold"></div>
+                <div class="w-8 h-8 border-b border-r border-brand-gold"></div>
+            </div>
+        </div>
+
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-40 grayscale" 
+             style="background-image: url('https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG');">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-black via-transparent to-brand-black"></div>
+
+        <!-- Top Content -->
+        <div class="relative z-30 w-full text-center pt-20 animate-float">
+            <p class="font-sans tracking-[0.5em] text-[10px] text-brand-gold uppercase mb-4">The Wedding Of</p>
+            <div class="px-4">
+                <h1 class="font-deco text-6xl md:text-8xl text-white drop-shadow-lg mb-2">Armand</h1>
+                <div class="flex items-center justify-center gap-4 my-2">
+                    <div class="h-[1px] w-12 bg-brand-gold"></div>
+                    <span class="font-script text-3xl text-brand-gold">&</span>
+                    <div class="h-[1px] w-12 bg-brand-gold"></div>
+                </div>
+                <h1 class="font-deco text-6xl md:text-8xl text-white drop-shadow-lg mt-2">Bintang</h1>
+            </div>
+        </div>
+
+        <!-- Bottom Card -->
+        <div class="relative z-30 w-full max-w-sm px-8 pb-16">
+            <div class="glass-deco p-6 text-center backdrop-blur-xl relative">
+                <!-- Inner Border -->
+                <div class="absolute inset-1 border border-brand-gold/20 pointer-events-none"></div>
+                
+                <p class="font-sans text-[10px] uppercase tracking-widest text-brand-cream/60 mb-3">Dear Special Guest</p>
+                <div id="guest-name" class="font-deco text-2xl mb-6 tracking-wide text-brand-gold">Tamu Undangan</div>
+                
+                <button onclick="openInvitation()" class="group relative px-8 py-3 bg-brand-gold text-brand-black font-sans text-xs font-bold tracking-[0.2em] uppercase transition-all hover:bg-white active:scale-95 w-full border border-transparent hover:border-brand-gold">
+                    <span class="relative z-10">Open Invitation</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" class="w-full opacity-0 transition-opacity duration-1000 bg-brand-black">
+
+        <!-- 2. HERO -->
+        <section id="home" class="min-h-[100dvh] relative flex flex-col items-center justify-center pt-24 pb-12 px-6 overflow-hidden">
+            
+            <!-- Art Deco Sunburst BG -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] bg-[radial-gradient(circle,rgba(212,175,55,0.1)_0%,transparent_60%)] z-0 pointer-events-none"></div>
+
+            <div class="container mx-auto max-w-md relative z-10 flex flex-col items-center">
+                
+                <!-- Geometric Image Frame -->
+                <div class="order-1 w-full flex justify-center mb-10 reveal-up">
+                    <div class="relative w-64 h-80">
+                        <!-- Decorative Frame Behind -->
+                        <div class="absolute -inset-3 border border-brand-gold/50 frame-cut-corner opacity-60"></div>
+                        <div class="absolute -inset-1.5 border border-brand-gold frame-cut-corner"></div>
+                        
+                        <!-- Image -->
+                        <div class="w-full h-full frame-cut-corner overflow-hidden grayscale contrast-125">
+                             <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/IMG_1724.JPG" 
+                                  class="w-full h-full object-cover" 
+                                  alt="Couple" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="order-2 text-center w-full reveal-up">
+                    <div class="sunburst-divider w-full max-w-[200px] mx-auto opacity-50"></div>
+                    
+                    <h2 class="font-deco text-4xl text-brand-cream mb-4 leading-tight">
+                        <span class="block text-brand-gold text-lg tracking-[0.4em] mb-2 font-sans">The Wedding</span>
+                        Celebration
+                    </h2>
+                    
+                    <p class="font-sans font-light text-sm text-gray-400 leading-relaxed px-4 mb-8 italic">
+                        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu..."
+                    </p>
+                    
+                    <div class="font-deco text-xl text-brand-gold border-y border-brand-gold py-3 inline-block px-8 tracking-widest bg-brand-gold/5">
+                        26 . 12 . 2025
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-pulse">
+                <span class="text-[9px] tracking-[0.3em] uppercase text-brand-gold">Scroll</span>
+                <div class="w-[1px] h-12 bg-gradient-to-b from-brand-gold to-transparent"></div>
+            </div>
+        </section>
+
+        <!-- 3. MEMPELAI -->
+        <section id="couple" class="py-20 bg-brand-dark relative">
+            <div class="absolute inset-0 bg-deco-pattern opacity-10"></div>
+            
+            <div class="container mx-auto max-w-md px-6 relative z-10">
+                <div class="text-center mb-16 reveal-up">
+                    <h2 class="font-deco text-4xl text-brand-gold mb-2">The Couple</h2>
+                    <div class="flex justify-center items-center gap-2 opacity-50">
+                        <div class="h-[1px] w-8 bg-brand-gold"></div>
+                        <div class="w-2 h-2 rotate-45 border border-brand-gold bg-brand-black"></div>
+                        <div class="h-[1px] w-8 bg-brand-gold"></div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-16">
+                    
+                    <!-- Groom -->
+                    <div class="text-center reveal-up group">
+                        <!-- Diamond Frame -->
+                        <div class="relative w-48 h-48 mx-auto mb-6">
+                            <div class="absolute inset-0 border border-brand-gold rotate-45 scale-110 opacity-30"></div>
+                            <div class="absolute inset-0 border border-brand-gold rotate-45"></div>
+                            <div class="w-full h-full overflow-hidden rotate-45 scale-[0.85] bg-gray-800">
+                                <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" 
+                                     class="w-full h-full object-cover -rotate-45 scale-[1.4] grayscale group-hover:grayscale-0 transition duration-700" loading="lazy">
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-deco text-2xl text-brand-cream mt-8 mb-1">Armand Maulana</h3>
+                        <p class="font-sans text-xs tracking-wider text-gray-500 mb-3 uppercase">Son of Mr. Agus & Mrs. Maryuni</p>
+                        <a href="#" class="inline-block border-b border-brand-gold text-brand-gold text-xs pb-1 tracking-widest hover:text-white transition">@armandmln</a>
+                    </div>
+
+                    <!-- Bride -->
+                    <div class="text-center reveal-up group">
+                        <!-- Diamond Frame -->
+                        <div class="relative w-48 h-48 mx-auto mb-6">
+                            <div class="absolute inset-0 border border-brand-gold rotate-45 scale-110 opacity-30"></div>
+                            <div class="absolute inset-0 border border-brand-gold rotate-45"></div>
+                            <div class="w-full h-full overflow-hidden rotate-45 scale-[0.85] bg-gray-800">
+                                <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" 
+                                     class="w-full h-full object-cover -rotate-45 scale-[1.4] grayscale group-hover:grayscale-0 transition duration-700" loading="lazy">
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-deco text-2xl text-brand-cream mt-8 mb-1">Darmini Nur Chotijah</h3>
+                        <p class="font-sans text-xs tracking-wider text-gray-500 mb-3 uppercase">Daughter of Mr. Muhyidin & Mrs. Daryati</p>
+                        <a href="#" class="inline-block border-b border-brand-gold text-brand-gold text-xs pb-1 tracking-widest hover:text-white transition">@bintang.0693</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ACARA -->
+        <section id="event" class="py-20 relative bg-brand-black text-white">
+            <div class="absolute top-0 w-full h-20 bg-gradient-to-b from-brand-dark to-transparent z-10"></div>
+            
+            <div class="container mx-auto max-w-md px-6 relative z-10">
+                <div class="text-center mb-10 reveal-up">
+                    <h2 class="font-deco text-4xl text-brand-gold mb-2">Save The Date</h2>
+                    <p class="font-sans text-[10px] tracking-[0.3em] text-gray-400 uppercase">Join us in our celebration</p>
+                </div>
+
+                <!-- Art Deco Countdown -->
+                <div id="countdown" class="flex justify-center gap-4 mb-14 reveal-up px-2"></div>
+
+                <div class="flex flex-col gap-8">
+                    <!-- Akad Card -->
+                    <div class="glass-deco p-8 text-center relative reveal-up">
+                        <!-- Corner Accents -->
+                        <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-brand-gold"></div>
+                        <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-brand-gold"></div>
+                        <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-brand-gold"></div>
+                        <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-brand-gold"></div>
+
+                        <h3 class="font-deco text-2xl text-white mb-2 tracking-widest">Akad Nikah</h3>
+                        <div class="w-10 h-[2px] bg-brand-gold mx-auto mb-4"></div>
+                        
+                        <div class="font-sans text-brand-gold mb-4 text-sm tracking-wide">
+                            08:00 - 10:00 WIB
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6 font-light">KUA Tambak<br>Banyumas, Jawa Tengah</p>
+                        
+                        <!-- Updated to Open Popup -->
+                        <a href="javascript:void(0)" onclick="openMap('akad')" class="inline-block px-6 py-2 border border-brand-gold text-[10px] font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-brand-black transition">
+                            View Map
+                        </a>
+                    </div>
+
+                    <!-- Resepsi Card -->
+                    <div class="glass-deco p-8 text-center relative reveal-up delay-100">
+                        <!-- Corner Accents -->
+                        <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-brand-gold"></div>
+                        <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-brand-gold"></div>
+                        <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-brand-gold"></div>
+                        <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-brand-gold"></div>
+
+                        <h3 class="font-deco text-2xl text-white mb-2 tracking-widest">Resepsi</h3>
+                        <div class="w-10 h-[2px] bg-brand-gold mx-auto mb-4"></div>
+                        
+                        <div class="font-sans text-brand-gold mb-4 text-sm tracking-wide">
+                            10:00 - Selesai
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6 font-light">Taman Serut Lik Cip<br>Tambak, Banyumas</p>
+                        
+                        <!-- Updated to Open Popup -->
+                        <a href="javascript:void(0)" onclick="openMap('resepsi')" class="inline-block px-6 py-2 border border-brand-gold text-[10px] font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-brand-black transition">
+                            View Map
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. GALLERY -->
+        <section id="gallery" class="py-20 bg-brand-dark relative">
+            <div class="container mx-auto max-w-md px-4">
+                <div class="text-center mb-10 reveal-up">
+                    <h2 class="font-deco text-3xl text-brand-cream mb-2">Moments</h2>
+                    <div class="sunburst-divider w-24 mx-auto opacity-50"></div>
+                </div>
+
+                <!-- Geometric Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex flex-col gap-4 reveal-up">
+                        <div class="relative p-1 border border-brand-gold/30">
+                            <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-48 object-cover grayscale hover:grayscale-0 transition duration-500" onclick="openLightbox(this.src)" loading="lazy">
+                        </div>
+                        <div class="relative p-1 border border-brand-gold/30">
+                            <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1705.JPG" class="w-full h-32 object-cover grayscale hover:grayscale-0 transition duration-500" onclick="openLightbox(this.src)" loading="lazy">
+                        </div>
+                        <div class="relative p-1 border border-brand-gold/30">
+                            <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" class="w-full h-56 object-cover grayscale hover:grayscale-0 transition duration-500" onclick="openLightbox(this.src)" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 reveal-up pt-8">
+                        <div class="relative p-1 border border-brand-gold/30">
+                            <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG" class="w-full h-40 object-cover grayscale hover:grayscale-0 transition duration-500" onclick="openLightbox(this.src)" loading="lazy">
+                        </div>
+                        <div class="relative p-1 border border-brand-gold/30">
+                            <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1724.JPG" class="w-full h-56 object-cover grayscale hover:grayscale-0 transition duration-500" onclick="openLightbox(this.src)" loading="lazy">
+                        </div>
+                        <div class="relative p-1 border border-brand-gold/30">
+                            <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" class="w-full h-32 object-cover grayscale hover:grayscale-0 transition duration-500" onclick="openLightbox(this.src)" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FOOTER -->
+        <footer class="bg-brand-black text-white py-20 text-center pb-32 relative border-t border-brand-gold/20">
+            <div class="container mx-auto relative z-10 px-6">
+                <h2 class="font-deco text-4xl text-brand-gold mb-8 opacity-80">Armand & Bintang</h2>
+                <div class="flex justify-center items-center gap-6 mb-10">
+                    <a href="#" class="w-10 h-10 flex items-center justify-center border border-brand-gold/50 rotate-45 hover:bg-brand-gold hover:text-black transition transform hover:rotate-90">
+                        <div class="-rotate-45"><i class="fab fa-instagram"></i></div>
+                    </a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center border border-brand-gold/50 rotate-45 hover:bg-brand-gold hover:text-black transition transform hover:rotate-90">
+                        <div class="-rotate-45"><i class="fab fa-facebook-f"></i></div>
+                    </a>
+                </div>
+                <p class="font-sans text-[10px] tracking-widest uppercase text-white/40">Thank you for your prayers</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- MOBILE NAV (Art Deco Style) -->
+    <nav id="bottom-nav" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 hidden md:hidden flex-row gap-6 items-center bg-brand-black/95 backdrop-blur-xl px-8 py-4 border border-brand-gold/40 shadow-[0_0_30px_rgba(212,175,55,0.15)] transition-transform duration-500 translate-y-[200%] w-auto max-w-[90%] justify-between">
+        <!-- Corner decorations for nav -->
+        <div class="absolute top-0 left-0 w-2 h-2 border-t border-l border-brand-gold"></div>
+        <div class="absolute top-0 right-0 w-2 h-2 border-t border-r border-brand-gold"></div>
+        <div class="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-brand-gold"></div>
+        <div class="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-brand-gold"></div>
+
+        <a href="#home" class="nav-item text-gray-500 text-lg active:scale-90 transition" onclick="setActiveNav(this)"><i class="fas fa-home"></i></a>
+        <a href="#couple" class="nav-item text-gray-500 text-lg active:scale-90 transition" onclick="setActiveNav(this)"><i class="fas fa-heart"></i></a>
+        <a href="#event" class="nav-item text-gray-500 text-lg active:scale-90 transition" onclick="setActiveNav(this)"><i class="fas fa-calendar-alt"></i></a>
+        <a href="#gallery" class="nav-item text-gray-500 text-lg active:scale-90 transition" onclick="setActiveNav(this)"><i class="fas fa-camera"></i></a>
+    </nav>
+
+    <!-- TOAST -->
+    <div id="toast" class="fixed top-6 left-1/2 -translate-x-1/2 bg-brand-black text-brand-gold px-6 py-3 border border-brand-gold z-[80] transition-all duration-300 opacity-0 -translate-y-full pointer-events-none flex items-center gap-3 w-max max-w-[90%] shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+        <span class="text-[10px] font-sans font-bold tracking-widest uppercase">Copied to Clipboard</span>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="fixed inset-0 z-[90] bg-black/95 hidden flex justify-center items-center opacity-0 transition-opacity duration-300 backdrop-blur-md px-4" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" class="max-h-[70vh] w-auto max-w-full border-2 border-brand-gold shadow-2xl" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- MAP MODAL (New Addition) -->
+    <div id="map-modal" class="fixed inset-0 z-[100] bg-black/95 hidden flex justify-center items-center opacity-0 transition-opacity duration-300 backdrop-blur-md px-4" onclick="closeMap()">
+        <div class="relative w-full max-w-2xl bg-brand-dark border-2 border-brand-gold p-1 shadow-[0_0_50px_rgba(212,175,55,0.2)] transform scale-95 transition-transform duration-300" id="map-content" onclick="event.stopPropagation()">
+            <!-- Corner Ornaments -->
+            <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-brand-gold -mt-1 -ml-1"></div>
+            <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-brand-gold -mt-1 -mr-1"></div>
+            <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-brand-gold -mb-1 -ml-1"></div>
+            <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-brand-gold -mb-1 -mr-1"></div>
+
+            <button onclick="closeMap()" class="absolute -top-12 right-0 text-white hover:text-brand-gold text-4xl">&times;</button>
+            
+            <h3 id="map-title" class="font-deco text-2xl text-brand-gold text-center py-5 tracking-widest uppercase">Location</h3>
+            
+            <div class="relative w-full h-[300px] md:h-[400px] bg-gray-900 border-y border-brand-gold/30">
+                <iframe id="map-frame" class="w-full h-full grayscale hover:grayscale-0 transition duration-700" frameborder="0" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <div class="p-6 text-center">
+                <a id="map-link" href="#" target="_blank" class="inline-block px-8 py-3 bg-brand-gold text-brand-black font-sans text-xs font-bold tracking-[0.2em] uppercase hover:bg-white transition border border-transparent">
+                    Buka di Google Maps
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. OPEN INVITATION
+        function openInvitation() {
+            const cover = document.getElementById('cover');
+            const mainContent = document.getElementById('main-content');
+            const bottomNav = document.getElementById('bottom-nav');
+            const musicControl = document.getElementById('music-control');
+            
+            cover.style.transform = 'translateY(-100%)';
+            
+            setTimeout(() => {
+                mainContent.classList.remove('opacity-0');
+                musicControl.classList.remove('hidden');
+                
+                safePlayAudio();
+                
+                initObserver();
+                startGoldFlakes(); // Changed to Gold Flakes
+                
+                if(window.innerWidth < 768) {
+                    bottomNav.classList.remove('hidden');
+                    bottomNav.classList.add('flex');
+                    setTimeout(() => bottomNav.classList.remove('translate-y-[200%]'), 500);
+                }
+            }, 500);
+        }
+
+        // 2. MUSIC CONTROL
+        const music = document.getElementById('bg-music');
+        const musicIconWrapper = document.getElementById('music-icon-wrapper');
+
+        function safePlayAudio() {
+            // musicIconWrapper.classList.remove('paused'); // removed rotation pause
+            const playPromise = music.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Audio playback prevented:", error);
+                });
+            }
+        }
+
+        function safePauseAudio() {
+            music.pause();
+        }
+
+        document.getElementById('music-control').addEventListener('click', () => {
+            if (music.paused) {
+                safePlayAudio();
+                musicIconWrapper.classList.add('animate-spin-slow');
+            } else {
+                safePauseAudio();
+                musicIconWrapper.classList.remove('animate-spin-slow');
+            }
+        });
+
+        // 3. SCROLL ANIMATIONS
+        function initObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+        }
+
+        // 4. NAVIGATION
+        function setActiveNav(element) {
+            document.querySelectorAll('.nav-item').forEach(el => {
+                el.classList.remove('active');
+                el.classList.replace('text-brand-gold', 'text-gray-500');
+            });
+            element.classList.add('active');
+            element.classList.replace('text-gray-500', 'text-brand-gold');
+        }
+
+        // 5. COUNTDOWN
+        const weddingDate = new Date("Dec 26, 2025 08:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const dist = weddingDate - now;
+            if(dist < 0) return;
+
+            const d = Math.floor(dist / (1000 * 60 * 60 * 24));
+            const h = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+
+            const boxClass = "text-center mx-3 border border-brand-gold/30 p-2 min-w-[50px]";
+            const numClass = "font-deco text-2xl text-white block mb-0 leading-none";
+            const labelClass = "text-[8px] font-sans tracking-widest uppercase text-brand-gold mt-1";
+
+            document.getElementById('countdown').innerHTML = `
+                <div class="${boxClass}"><span class="${numClass}">${d}</span><span class="${labelClass}">Hari</span></div>
+                <div class="text-xl text-brand-gold pt-3">:</div>
+                <div class="${boxClass}"><span class="${numClass}">${h}</span><span class="${labelClass}">Jam</span></div>
+                <div class="text-xl text-brand-gold pt-3">:</div>
+                <div class="${boxClass}"><span class="${numClass}">${m}</span><span class="${labelClass}">Menit</span></div>
+            `;
+        }, 1000);
+
+        // 6. LIGHTBOX
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.classList.remove('hidden');
+            setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => lightbox.classList.add('hidden'), 300);
+        }
+
+        // 7. MAP PREVIEW LOGIC
+        const mapData = {
+            akad: {
+                title: "Akad Nikah",
+                // Embed URL untuk Preview (Search by Address)
+                embedUrl: "https://maps.google.com/maps?q=KUA+Tambak+Banyumas+Jawa+Tengah&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                // Link Eksternal untuk Tombol
+                externalLink: "https://share.google/Lwoke1Np7ogb3Wq42" 
+            },
+            resepsi: {
+                title: "Resepsi",
+                embedUrl: "https://maps.google.com/maps?q=Taman+Serut+Lik+Cip+Tambak+Banyumas&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                externalLink: "https://maps.app.goo.gl/VedhDyhz3Hz5VFJp8"
+            }
+        };
+
+        function openMap(type) {
+            const modal = document.getElementById('map-modal');
+            const content = document.getElementById('map-content');
+            const frame = document.getElementById('map-frame');
+            const title = document.getElementById('map-title');
+            const link = document.getElementById('map-link');
+            
+            const data = mapData[type];
+            
+            title.innerText = data.title;
+            frame.src = data.embedUrl;
+            link.href = data.externalLink;
+            
+            modal.classList.remove('hidden');
+            // Sedikit delay agar transisi CSS jalan
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeMap() {
+            const modal = document.getElementById('map-modal');
+            const content = document.getElementById('map-content');
+            const frame = document.getElementById('map-frame');
+            
+            modal.classList.add('opacity-0');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                frame.src = ''; // Clear src agar tidak membebani memori saat ditutup
+            }, 300);
+        }
+
+        // 8. GUEST NAME
+        const urlParams = new URLSearchParams(window.location.search);
+        const guest = urlParams.get('to') || urlParams.get('u');
+        if(guest) document.getElementById('guest-name').innerText = decodeURIComponent(guest);
+
+        // 9. GOLD FLAKES (Art Deco Particle Effect)
+        function startGoldFlakes() {
+            const container = document.body;
+            // Reduce particles on mobile for performance
+            const isMobile = window.innerWidth < 768;
+            const interval = isMobile ? 800 : 400;
+
+            setInterval(() => {
+                const flake = document.createElement('div');
+                flake.classList.add('gold-flake');
+                flake.style.left = Math.random() * 100 + 'vw';
+                
+                // Randomize size slightly
+                const size = Math.random() * 3 + 2 + 'px';
+                flake.style.width = size;
+                flake.style.height = size;
+                
+                flake.style.animationDuration = Math.random() * 5 + 5 + 's';
+                container.appendChild(flake);
+                setTimeout(() => flake.remove(), 10000);
+            }, interval); 
+        }
+    </script>
+</body>
+</html>
