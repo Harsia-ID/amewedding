@@ -2,8 +2,28 @@
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- PRIMARY META TAGS -->
     <title>The Wedding of Armand & Bintang</title>
+    <meta name="description" content="Jumat, 26 Desember 2025. Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami.">
+    <meta name="author" content="Armand & Bintang">
+
+    <!-- OPEN GRAPH / FACEBOOK / WHATSAPP -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://harsia-id.github.io/amewedding/"> <!-- Ganti dengan URL hosting asli Anda nanti -->
+    <meta property="og:title" content="The Wedding of Armand & Bintang">
+    <meta property="og:description" content="Jumat, 26 Desember 2025. Save The Date!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- TWITTER -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://harsia-id.github.io/amewedding/">
+    <meta property="twitter:title" content="The Wedding of Armand & Bintang">
+    <meta property="twitter:description" content="Jumat, 26 Desember 2025. Save The Date!">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -48,13 +68,16 @@
     </script>
 
     <style>
-        /* Hide Scrollbar but allow scrolling */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+        ::-webkit-scrollbar-track {
+            background: #F5F5F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
         }
 
         /* Glassmorphism Card */
@@ -82,236 +105,273 @@
         }
     </style>
 </head>
-<body class="bg-gray-200 text-brand-dark antialiased">
+<body class="bg-brand-cream text-brand-dark antialiased font-serif overflow-x-hidden">
 
-    <!-- FRAME UTAMA (MOBILE SIMULATOR) -->
-    <div class="max-w-[480px] mx-auto bg-brand-cream min-h-screen shadow-2xl relative overflow-hidden font-serif">
+    <!-- AUDIO PLAYER -->
+    <audio id="bg-music" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" type="audio/mpeg">
+    </audio>
 
-        <!-- AUDIO PLAYER -->
-        <audio id="bg-music" loop>
-            <source src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" type="audio/mpeg">
-        </audio>
+    <!-- MUSIC CONTROL (Floating) -->
+    <div id="music-control" class="fixed top-6 right-6 z-[70] hidden cursor-pointer transition-transform hover:scale-110">
+        <div class="w-12 h-12 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-lg border border-brand-gold/30 animate-spin-slow" id="music-icon-wrapper">
+            <i class="fas fa-compact-disc text-brand-gold text-2xl"></i>
+        </div>
+    </div>
 
-        <!-- MUSIC CONTROL (Floating Top Right) -->
-        <div id="music-control" class="absolute top-6 right-6 z-50 hidden cursor-pointer">
-            <div class="w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-lg border border-brand-gold/30 animate-spin-slow" id="music-icon-wrapper">
-                <i class="fas fa-compact-disc text-brand-gold text-xl"></i>
-            </div>
+    <!-- 1. COVER / OPENING MODAL (Full Screen Overlay) -->
+    <section id="cover" class="fixed inset-0 z-[60] bg-cover bg-center flex flex-col justify-between items-center text-white py-10 md:py-20 transition-transform duration-1000 ease-in-out h-screen w-screen"
+        style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG');">
+        
+        <div class="text-center mt-10 md:mt-20 animate-float px-4">
+            <p class="tracking-[0.3em] uppercase text-xs md:text-sm mb-4">The Wedding Of</p>
+            <h1 class="font-script text-6xl md:text-8xl text-brand-gold drop-shadow-lg mb-4">Armand & Bintang</h1>
+            <p class="font-sans text-sm md:text-base tracking-widest border-t border-b border-white/30 py-2 inline-block px-8">26 . 12 . 2025</p>
         </div>
 
-        <!-- 1. COVER / OPENING MODAL -->
-        <section id="cover" class="absolute inset-0 z-[60] bg-cover bg-center flex flex-col justify-between items-center text-white py-20 transition-transform duration-1000 ease-in-out h-full w-full"
-            style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG');">
-            
-            <div class="text-center mt-10 animate-float">
-                <p class="tracking-[0.3em] uppercase text-xs mb-4">The Wedding Of</p>
-                <h1 class="font-script text-6xl text-brand-gold drop-shadow-lg mb-2">Armand & Bintang</h1>
-                <p class="font-sans text-sm tracking-widest border-t border-b border-white/30 py-2 inline-block px-4">26 . 12 . 2025</p>
+        <div class="text-center w-full max-w-md px-8 pb-10 md:pb-20">
+            <div class="glass-card rounded-2xl p-6 md:p-8 text-brand-dark mb-8 transform hover:scale-105 transition duration-500">
+                <p class="font-sans text-xs uppercase tracking-wide mb-2 text-gray-500">Kepada Bapak/Ibu/Saudara/i</p>
+                <div id="guest-name" class="text-2xl md:text-3xl font-bold mb-2">Tamu Undangan</div>
+                <p class="text-xs italic text-gray-400">Mohon maaf apabila ada kesalahan penulisan nama</p>
             </div>
 
-            <div class="text-center w-full px-8 pb-10">
-                <div class="glass-card rounded-2xl p-6 text-brand-dark mb-6">
-                    <p class="font-sans text-xs uppercase tracking-wide mb-2 text-gray-500">Kepada Bapak/Ibu/Saudara/i</p>
-                    <div id="guest-name" class="text-2xl font-bold mb-2">Tamu Undangan</div>
-                    <p class="text-xs italic text-gray-400">Mohon maaf apabila ada kesalahan penulisan nama</p>
-                </div>
+            <button onclick="openInvitation()" class="bg-brand-gold text-white font-sans font-bold py-3 md:py-4 px-10 rounded-full shadow-lg hover:bg-white hover:text-brand-gold transition-all duration-300 w-full md:w-auto flex justify-center items-center gap-2 group mx-auto text-lg">
+                <i class="fas fa-envelope group-hover:animate-bounce"></i> Buka Undangan
+            </button>
+        </div>
+    </section>
 
-                <button onclick="openInvitation()" class="bg-brand-gold text-white font-sans font-bold py-3 px-8 rounded-full shadow-lg hover:bg-white hover:text-brand-gold transition-all duration-300 w-full flex justify-center items-center gap-2 group">
-                    <i class="fas fa-envelope group-hover:animate-bounce"></i> Buka Undangan
-                </button>
+    <!-- DESKTOP NAVIGATION (Visible on md+) -->
+    <nav id="desktop-nav" class="fixed top-0 left-0 w-full z-40 bg-white/80 backdrop-blur-md shadow-sm py-4 hidden md:hidden transition-all duration-500 transform -translate-y-full justify-center gap-8">
+        <a href="#home" class="font-sans text-sm hover:text-brand-gold uppercase tracking-widest">Home</a>
+        <a href="#couple" class="font-sans text-sm hover:text-brand-gold uppercase tracking-widest">Mempelai</a>
+        <a href="#event" class="font-sans text-sm hover:text-brand-gold uppercase tracking-widest">Acara</a>
+        <a href="#gallery" class="font-sans text-sm hover:text-brand-gold uppercase tracking-widest">Galeri</a>
+        <a href="#gift" class="font-sans text-sm hover:text-brand-gold uppercase tracking-widest">Gift</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" class="w-full opacity-0 transition-opacity duration-1000">
+
+        <!-- 2. HERO -->
+        <section id="home" class="min-h-screen relative flex flex-col items-center justify-center text-center px-6 pt-10 md:pt-20">
+            <div class="absolute top-0 left-0 w-full h-1/2 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] opacity-50"></div>
+            
+            <!-- Arch Image Frame -->
+            <div class="relative w-64 h-80 md:w-80 md:h-96 mb-8 mt-10 md:mt-0">
+                <div class="absolute inset-0 border-2 border-brand-gold rounded-t-full transform translate-x-3 translate-y-3"></div>
+                <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/IMG_1724.JPG" 
+                     class="w-full h-full object-cover rounded-t-full shadow-xl relative z-10" alt="Couple">
+            </div>
+
+            <div class="fade-in-up max-w-2xl mx-auto">
+                <h2 class="font-script text-5xl md:text-7xl text-brand-gold mb-4">Armand & Bintang</h2>
+                <p class="font-sans text-sm md:text-base text-gray-500 tracking-widest uppercase mb-6">Are Getting Married</p>
+                <div class="h-10 w-[1px] bg-brand-gold mx-auto mb-6"></div>
+                <p class="font-serif text-lg md:text-xl italic text-gray-600">
+                    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..."
+                </p>
+            </div>
+            
+            <!-- Scroll Indicator Desktop -->
+            <div class="absolute bottom-10 hidden md:block animate-bounce text-brand-gold">
+                <i class="fas fa-chevron-down text-2xl"></i>
             </div>
         </section>
 
-        <!-- MAIN CONTENT (SCROLLABLE) -->
-        <main id="main-content" class="h-screen overflow-y-auto no-scrollbar scroll-smooth pb-20 opacity-0 transition-opacity duration-1000">
-
-            <!-- 2. HERO -->
-            <section id="home" class="min-h-screen relative flex flex-col items-center justify-center text-center px-6 pt-10">
-                <div class="absolute top-0 left-0 w-full h-1/2 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] opacity-50"></div>
-                
-                <!-- Arch Image Frame -->
-                <div class="relative w-64 h-80 mb-8 mt-10">
-                    <div class="absolute inset-0 border-2 border-brand-gold rounded-t-full transform translate-x-2 translate-y-2"></div>
-                    <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/IMG_1724.JPG" 
-                         class="w-full h-full object-cover rounded-t-full shadow-xl relative z-10" alt="Couple">
+        <!-- 3. MEMPELAI -->
+        <section id="couple" class="py-16 md:py-24 px-6 bg-white relative">
+            <div class="container mx-auto max-w-5xl">
+                <div class="text-center mb-16 fade-in-up">
+                    <img src="https://img.icons8.com/ios/50/D4AF37/wedding-rings.png" class="h-12 mx-auto mb-4" alt="Rings">
+                    <h2 class="font-serif text-4xl font-bold text-brand-dark">Mempelai Pria & Wanita</h2>
                 </div>
 
-                <div class="fade-in-up">
-                    <h2 class="font-script text-5xl text-brand-gold mb-2">Armand & Bintang</h2>
-                    <p class="font-sans text-sm text-gray-500 tracking-widest uppercase mb-6">Are Getting Married</p>
-                    <div class="h-10 w-[1px] bg-brand-gold mx-auto mb-6"></div>
-                    <p class="font-serif text-lg italic text-gray-600 max-w-xs mx-auto">
-                        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..."
-                    </p>
-                </div>
-            </section>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24">
+                    <!-- Groom -->
+                    <div class="flex flex-col items-center text-center fade-in-up group w-full md:w-1/3">
+                        <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-brand-cream shadow-xl mb-6 transform group-hover:scale-105 transition duration-500">
+                            <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-brand-gold mb-2">Armand Maulana Effendy</h3>
+                        <p class="font-sans text-sm text-gray-500 mb-4">Putra Bapak Hendra & Ibu Susi</p>
+                        <a href="#" class="text-brand-gold hover:text-brand-dark transition"><i class="fab fa-instagram text-xl"></i> @armand.me</a>
+                    </div>
 
-            <!-- 3. MEMPELAI -->
-            <section id="couple" class="py-16 px-6 bg-white relative">
+                    <!-- Separator -->
+                    <div class="hidden md:flex flex-col items-center justify-center gap-4 opacity-50 h-64">
+                        <div class="h-full w-[1px] bg-brand-dark"></div>
+                    </div>
+                    <div class="md:hidden flex items-center justify-center gap-4 mb-4 opacity-50 w-full">
+                        <div class="h-[1px] w-full bg-brand-dark"></div>
+                        <span class="font-script text-2xl">&</span>
+                        <div class="h-[1px] w-full bg-brand-dark"></div>
+                    </div>
+
+                    <!-- Bride -->
+                    <div class="flex flex-col items-center text-center fade-in-up group w-full md:w-1/3">
+                        <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-brand-cream shadow-xl mb-6 transform group-hover:scale-105 transition duration-500">
+                            <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-brand-gold mb-2">Bintang Sirius</h3>
+                        <p class="font-sans text-sm text-gray-500 mb-4">Putri Bapak Joko & Ibu Maya</p>
+                        <a href="#" class="text-brand-gold hover:text-brand-dark transition"><i class="fab fa-instagram text-xl"></i> @bintang.s</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ACARA -->
+        <section id="event" class="py-16 md:py-24 px-4 bg-brand-green text-white relative bg-cover bg-fixed bg-center" style="background-image: url('https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG');">
+            <div class="absolute inset-0 bg-black/60"></div>
+            
+            <div class="relative z-10 container mx-auto max-w-4xl">
+                <div class="text-center mb-10 fade-in-up">
+                    <h2 class="font-serif text-4xl font-bold text-brand-gold">Save The Date</h2>
+                    <p class="font-sans text-base mt-2 opacity-90">Kami menantikan kehadiran Anda di hari bahagia kami</p>
+                </div>
+
+                <!-- Countdown -->
+                <div id="countdown" class="flex justify-center gap-4 md:gap-8 mb-16 fade-in-up font-sans"></div>
+
+                <!-- Event Cards (Grid on Desktop) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Akad -->
+                    <div class="glass-card bg-black/30 p-8 rounded-xl text-center border-l-4 border-brand-gold fade-in-up hover:bg-black/40 transition">
+                        <div class="text-4xl text-brand-gold mb-4"><i class="fas fa-handshake"></i></div>
+                        <h3 class="font-script text-4xl text-brand-gold mb-2">Akad Nikah</h3>
+                        <div class="flex justify-center items-center gap-2 text-base mb-6 font-bold">
+                            <i class="far fa-clock text-brand-gold"></i>
+                            <span>08:00 - 10:00 WIB</span>
+                        </div>
+                        <p class="text-base opacity-90 mb-6 leading-relaxed">Rumah Bintang<br>Jawa Tengah, Indonesia</p>
+                        <a href="https://maps.google.com" target="_blank" class="inline-block bg-white/20 hover:bg-brand-gold px-6 py-2 rounded-full text-sm transition font-sans">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Google Maps
+                        </a>
+                    </div>
+
+                    <!-- Resepsi -->
+                    <div class="glass-card bg-black/30 p-8 rounded-xl text-center border-r-4 border-brand-gold fade-in-up hover:bg-black/40 transition">
+                        <div class="text-4xl text-brand-gold mb-4"><i class="fas fa-glass-cheers"></i></div>
+                        <h3 class="font-script text-4xl text-brand-gold mb-2">Resepsi</h3>
+                        <div class="flex justify-center items-center gap-2 text-base mb-6 font-bold">
+                            <i class="far fa-clock text-brand-gold"></i>
+                            <span>11:00 - Selesai</span>
+                        </div>
+                        <p class="text-base opacity-90 mb-6 leading-relaxed">Rumah Bintang<br>Jawa Tengah, Indonesia</p>
+                        <a href="https://maps.google.com" target="_blank" class="inline-block bg-white/20 hover:bg-brand-gold px-6 py-2 rounded-full text-sm transition font-sans">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. GALLERY (Adaptive Grid) -->
+        <section id="gallery" class="py-16 md:py-24 px-4 bg-brand-cream">
+            <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-12 fade-in-up">
-                    <img src="https://img.icons8.com/ios/50/D4AF37/wedding-rings.png" class="h-10 mx-auto mb-4" alt="Rings">
-                    <h2 class="font-serif text-3xl font-bold text-brand-dark">Mempelai Pria & Wanita</h2>
+                    <h2 class="font-serif text-4xl text-brand-dark">Galeri Foto</h2>
+                    <div class="h-1 w-20 bg-brand-gold mx-auto mt-4"></div>
                 </div>
 
-                <!-- Groom -->
-                <div class="flex flex-col items-center mb-12 fade-in-up">
-                    <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-cream shadow-lg mb-6">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" class="w-full h-full object-cover">
+                <!-- Masonry Grid: 2 cols mobile, 4 cols desktop -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="fade-in-up space-y-4">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-64 md:h-80 object-cover rounded-lg shadow-md hover:opacity-90 transition">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1705.JPG" class="w-full h-40 md:h-56 object-cover rounded-lg shadow-md hover:opacity-90 transition">
                     </div>
-                    <h3 class="font-serif text-2xl font-bold text-brand-gold mb-2">Armand Maulana Effendy</h3>
-                    <p class="font-sans text-xs text-gray-500 mb-4">Putra Bapak Hendra & Ibu Susi</p>
-                    <a href="#" class="text-brand-gold hover:text-brand-dark"><i class="fab fa-instagram text-xl"></i> @armand.me</a>
-                </div>
-
-                <!-- Separator -->
-                <div class="flex items-center justify-center gap-4 mb-12 opacity-50">
-                    <div class="h-[1px] w-20 bg-brand-dark"></div>
-                    <span class="font-script text-2xl">&</span>
-                    <div class="h-[1px] w-20 bg-brand-dark"></div>
-                </div>
-
-                <!-- Bride -->
-                <div class="flex flex-col items-center fade-in-up">
-                    <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-cream shadow-lg mb-6">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" class="w-full h-full object-cover">
+                    <div class="fade-in-up space-y-4 pt-8 md:pt-0">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG" class="w-full h-40 md:h-56 object-cover rounded-lg shadow-md hover:opacity-90 transition">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1724.JPG" class="w-full h-64 md:h-80 object-cover rounded-lg shadow-md hover:opacity-90 transition">
                     </div>
-                    <h3 class="font-serif text-2xl font-bold text-brand-gold mb-2">Bintang Sirius</h3>
-                    <p class="font-sans text-xs text-gray-500 mb-4">Putri Bapak Joko & Ibu Maya</p>
-                    <a href="#" class="text-brand-gold hover:text-brand-dark"><i class="fab fa-instagram text-xl"></i> @bintang.s</a>
-                </div>
-            </section>
-
-            <!-- 4. ACARA -->
-            <section id="event" class="py-16 px-4 bg-brand-green text-white relative bg-cover bg-fixed bg-center" style="background-image: url('https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG');">
-                <div class="absolute inset-0 bg-black/60"></div>
-                
-                <div class="relative z-10 container mx-auto">
-                    <div class="text-center mb-10 fade-in-up">
-                        <h2 class="font-serif text-3xl font-bold text-brand-gold">Save The Date</h2>
-                        <p class="font-sans text-sm mt-2">Kami menantikan kehadiran Anda</p>
+                    <!-- Duplicate for demo fullness on desktop -->
+                    <div class="fade-in-up space-y-4 hidden md:block pt-12">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-90 transition">
                     </div>
-
-                    <!-- Countdown -->
-                    <div id="countdown" class="flex justify-center gap-3 mb-12 fade-in-up font-sans"></div>
-
-                    <!-- Event Cards -->
-                    <div class="space-y-6">
-                        <!-- Akad -->
-                        <div class="glass-card bg-black/30 p-6 rounded-xl text-center border-l-4 border-brand-gold fade-in-up">
-                            <h3 class="font-script text-3xl text-brand-gold mb-2">Akad Nikah</h3>
-                            <div class="flex justify-center items-center gap-2 text-sm mb-4">
-                                <i class="far fa-clock text-brand-gold"></i>
-                                <span>08:00 - 10:00 WIB</span>
-                            </div>
-                            <p class="text-sm opacity-90 mb-4">Rumah Bintang<br>Jawa Tengah, Indonesia</p>
-                            <a href="https://maps.google.com" target="_blank" class="inline-block bg-white/20 hover:bg-brand-gold px-4 py-2 rounded-full text-xs transition">
-                                <i class="fas fa-map-marker-alt mr-1"></i> Google Maps
-                            </a>
-                        </div>
-
-                        <!-- Resepsi -->
-                        <div class="glass-card bg-black/30 p-6 rounded-xl text-center border-r-4 border-brand-gold fade-in-up">
-                            <h3 class="font-script text-3xl text-brand-gold mb-2">Resepsi</h3>
-                            <div class="flex justify-center items-center gap-2 text-sm mb-4">
-                                <i class="far fa-clock text-brand-gold"></i>
-                                <span>11:00 - Selesai</span>
-                            </div>
-                            <p class="text-sm opacity-90 mb-4">Rumah Bintang<br>Jawa Tengah, Indonesia</p>
-                            <a href="https://maps.google.com" target="_blank" class="inline-block bg-white/20 hover:bg-brand-gold px-4 py-2 rounded-full text-xs transition">
-                                <i class="fas fa-map-marker-alt mr-1"></i> Google Maps
-                            </a>
-                        </div>
+                    <div class="fade-in-up space-y-4 hidden md:block">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/ame123.JPG" class="w-full h-40 object-cover rounded-lg shadow-md hover:opacity-90 transition">
+                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/bintang123.JPG" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-90 transition">
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- 5. GALLERY (Masonry-ish) -->
-            <section id="gallery" class="py-16 px-4 bg-brand-cream">
-                <div class="text-center mb-10 fade-in-up">
-                    <h2 class="font-serif text-3xl text-brand-dark">Galeri Foto</h2>
-                    <div class="h-1 w-16 bg-brand-gold mx-auto mt-2"></div>
+        <!-- 6. GIFT -->
+        <section id="gift" class="py-16 md:py-24 px-6 bg-white">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12 fade-in-up">
+                    <h2 class="font-serif text-4xl text-brand-dark mb-4">Wedding Gift</h2>
+                    <p class="font-sans text-sm md:text-base text-gray-500 max-w-xl mx-auto">Tanpa mengurangi rasa hormat, bagi Anda yang ingin memberikan tanda kasih, dapat melalui:</p>
                 </div>
 
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="fade-in-up">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1749.JPG" class="w-full h-64 object-cover rounded-lg shadow-md mb-3">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1705.JPG" class="w-full h-40 object-cover rounded-lg shadow-md">
-                    </div>
-                    <div class="pt-8 fade-in-up transition-delay-200">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1700.JPG" class="w-full h-40 object-cover rounded-lg shadow-md mb-3">
-                        <img src="https://raw.githubusercontent.com/Harsia-ID/amewedding/refs/heads/main/img/IMG_1724.JPG" class="w-full h-64 object-cover rounded-lg shadow-md">
-                    </div>
-                </div>
-            </section>
-
-            <!-- 6. GIFT -->
-            <section id="gift" class="py-16 px-6 bg-white">
-                <div class="text-center mb-10 fade-in-up">
-                    <h2 class="font-serif text-3xl text-brand-dark mb-4">Wedding Gift</h2>
-                    <p class="font-sans text-sm text-gray-500">Tanpa mengurangi rasa hormat, bagi Anda yang ingin memberikan tanda kasih, dapat melalui:</p>
-                </div>
-
-                <div class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
                     <!-- BCA -->
-                    <div class="border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition fade-in-up">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/2560px-Bank_Central_Asia.svg.png" class="h-6 mb-4">
-                        <p class="font-mono text-lg font-bold text-gray-700">1234567890</p>
-                        <p class="text-xs text-gray-500 mb-4">a.n Armand Maulana Effendy</p>
-                        <button onclick="copyToClipboard('1234567890')" class="text-xs bg-brand-gold text-white px-4 py-2 rounded-full flex items-center gap-2">
-                            <i class="fas fa-copy"></i> Salin
+                    <div class="border border-gray-200 rounded-2xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300 fade-in-up bg-white">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/2560px-Bank_Central_Asia.svg.png" class="h-8 md:h-10 mb-6 object-contain">
+                        <p class="text-gray-400 text-xs uppercase tracking-widest mb-2">Nomor Rekening</p>
+                        <p class="font-mono text-xl md:text-2xl font-bold text-gray-800 mb-2">1234567890</p>
+                        <p class="text-sm font-bold text-brand-gold mb-6">a.n Armand Maulana Effendy</p>
+                        <button onclick="copyToClipboard('1234567890')" class="text-sm bg-brand-dark hover:bg-brand-gold text-white px-6 py-2 rounded-full flex items-center gap-2 transition-colors">
+                            <i class="fas fa-copy"></i> Salin Nomor
                         </button>
                     </div>
 
                     <!-- Mandiri -->
-                    <div class="border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition fade-in-up">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bank_Mandiri_logo_2016.svg/2560px-Bank_Mandiri_logo_2016.svg.png" class="h-6 mb-4">
-                        <p class="font-mono text-lg font-bold text-gray-700">0987654321</p>
-                        <p class="text-xs text-gray-500 mb-4">a.n Bintang Sirius</p>
-                        <button onclick="copyToClipboard('0987654321')" class="text-xs bg-brand-gold text-white px-4 py-2 rounded-full flex items-center gap-2">
-                            <i class="fas fa-copy"></i> Salin
+                    <div class="border border-gray-200 rounded-2xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300 fade-in-up bg-white">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bank_Mandiri_logo_2016.svg/2560px-Bank_Mandiri_logo_2016.svg.png" class="h-8 md:h-10 mb-6 object-contain">
+                        <p class="text-gray-400 text-xs uppercase tracking-widest mb-2">Nomor Rekening</p>
+                        <p class="font-mono text-xl md:text-2xl font-bold text-gray-800 mb-2">0987654321</p>
+                        <p class="text-sm font-bold text-brand-gold mb-6">a.n Bintang Sirius</p>
+                        <button onclick="copyToClipboard('0987654321')" class="text-sm bg-brand-dark hover:bg-brand-gold text-white px-6 py-2 rounded-full flex items-center gap-2 transition-colors">
+                            <i class="fas fa-copy"></i> Salin Nomor
                         </button>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- 7. FOOTER -->
-            <footer class="bg-brand-dark text-white py-12 text-center pb-24">
-                <h2 class="font-script text-4xl text-brand-gold mb-6">Armand & Bintang</h2>
-                <p class="text-xs text-gray-500">Terima kasih atas doa dan restu Anda</p>
-            </footer>
+        <!-- 7. FOOTER -->
+        <footer class="bg-brand-dark text-white py-16 text-center pb-24 md:pb-16">
+            <h2 class="font-script text-5xl text-brand-gold mb-6">Armand & Bintang</h2>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-gold transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-gold transition"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <p class="text-xs text-gray-500">Terima kasih atas doa dan restu Anda</p>
+        </footer>
 
-        </main>
+    </main>
 
-        <!-- BOTTOM NAVIGATION BAR -->
-        <nav id="bottom-nav" class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-100 flex justify-around items-center py-3 px-2 shadow-[0_-5px_15px_rgba(0,0,0,0.05)] max-w-[480px] mx-auto hidden transition-all duration-500 transform translate-y-full">
-            <a href="#home" class="nav-item flex flex-col items-center text-gray-400 hover:text-brand-gold transition active" onclick="setActiveNav(this)">
-                <i class="fas fa-home text-lg mb-1"></i>
-                <span class="text-[10px] font-sans">Home</span>
-            </a>
-            <a href="#couple" class="nav-item flex flex-col items-center text-gray-400 hover:text-brand-gold transition" onclick="setActiveNav(this)">
-                <i class="fas fa-user-friends text-lg mb-1"></i>
-                <span class="text-[10px] font-sans">Mempelai</span>
-            </a>
-            <a href="#event" class="nav-item flex flex-col items-center text-gray-400 hover:text-brand-gold transition" onclick="setActiveNav(this)">
-                <i class="fas fa-calendar-alt text-lg mb-1"></i>
-                <span class="text-[10px] font-sans">Acara</span>
-            </a>
-            <a href="#gallery" class="nav-item flex flex-col items-center text-gray-400 hover:text-brand-gold transition" onclick="setActiveNav(this)">
-                <i class="fas fa-images text-lg mb-1"></i>
-                <span class="text-[10px] font-sans">Galeri</span>
-            </a>
-            <a href="#gift" class="nav-item flex flex-col items-center text-gray-400 hover:text-brand-gold transition" onclick="setActiveNav(this)">
-                <i class="fas fa-gift text-lg mb-1"></i>
-                <span class="text-[10px] font-sans">Gift</span>
-            </a>
-        </nav>
+    <!-- MOBILE BOTTOM NAVIGATION BAR (Hidden on MD+) -->
+    <nav id="bottom-nav" class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-100 flex md:hidden justify-around items-center py-3 px-2 shadow-[0_-5px_15px_rgba(0,0,0,0.05)] transition-all duration-500 transform translate-y-full">
+        <a href="#home" class="nav-item flex flex-col items-center text-gray-400 hover:text-brand-gold transition active" onclick="setActiveNav(this)">
+            <i class="fas fa-home text-lg mb-1"></i>
+            <span class="text-[10px] font-sans">Home</span>
+        </a>
+        <a href="#couple" class="nav-item flex flex-col items-center text-gray-400 hover:text-brand-gold transition" onclick="setActiveNav(this)">
+            <i class="fas fa-user-friends text-lg mb-1"></i>
+            <span class="text-[10px] font-sans">Mempelai</span>
+        </a>
+        <a href="#event" class="nav-item flex flex-col items-center text-gray-400 hover:text-brand-gold transition" onclick="setActiveNav(this)">
+            <i class="fas fa-calendar-alt text-lg mb-1"></i>
+            <span class="text-[10px] font-sans">Acara</span>
+        </a>
+        <a href="#gallery" class="nav-item flex flex-col items-center text-gray-400 hover:text-brand-gold transition" onclick="setActiveNav(this)">
+            <i class="fas fa-images text-lg mb-1"></i>
+            <span class="text-[10px] font-sans">Galeri</span>
+        </a>
+        <a href="#gift" class="nav-item flex flex-col items-center text-gray-400 hover:text-brand-gold transition" onclick="setActiveNav(this)">
+            <i class="fas fa-gift text-lg mb-1"></i>
+            <span class="text-[10px] font-sans">Gift</span>
+        </a>
+    </nav>
 
-        <!-- TOAST NOTIFICATION -->
-        <div id="toast" class="fixed top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg z-[80] transition-opacity duration-300 opacity-0 pointer-events-none flex items-center gap-2">
-            <i class="fas fa-check-circle text-green-400"></i>
-            <span class="text-sm font-sans">Berhasil disalin</span>
-        </div>
-
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed top-24 md:top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-8 py-4 rounded-full shadow-2xl z-[80] transition-opacity duration-300 opacity-0 pointer-events-none flex items-center gap-3">
+        <i class="fas fa-check-circle text-green-400 text-xl"></i>
+        <span class="text-base font-sans font-bold">Nomor Rekening Disalin</span>
     </div>
 
     <script>
@@ -320,6 +380,7 @@
             const cover = document.getElementById('cover');
             const mainContent = document.getElementById('main-content');
             const bottomNav = document.getElementById('bottom-nav');
+            const desktopNav = document.getElementById('desktop-nav');
             const musicControl = document.getElementById('music-control');
             
             // Slide cover up
@@ -328,10 +389,13 @@
             // Show content
             mainContent.classList.remove('opacity-0');
             
-            // Show Nav (slide up)
+            // Show Navs
             bottomNav.classList.remove('hidden');
+            desktopNav.classList.remove('hidden');
+            
             setTimeout(() => {
                 bottomNav.classList.remove('translate-y-full');
+                desktopNav.classList.remove('-translate-y-full');
             }, 100);
 
             // Show Music
@@ -378,7 +442,7 @@
             document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
         }
 
-        // 4. NAV ACTIVE STATE (Manual for simplicity)
+        // 4. NAV ACTIVE STATE
         function setActiveNav(element) {
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active', 'text-brand-gold'));
             document.querySelectorAll('.nav-item').forEach(el => el.classList.add('text-gray-400'));
@@ -396,10 +460,15 @@
             });
         }
 
-        // 6. GUEST NAME
+        // 6. GUEST NAME & DYNAMIC TITLE
         const urlParams = new URLSearchParams(window.location.search);
         const guest = urlParams.get('to') || urlParams.get('u');
-        if(guest) document.getElementById('guest-name').innerText = guest;
+        
+        if(guest) {
+            document.getElementById('guest-name').innerText = guest;
+            // Update document title for better browser tab UX
+            document.title = `Undangan untuk ${guest} - The Wedding of Armand & Bintang`;
+        }
 
         // 7. COUNTDOWN
         const weddingDate = new Date("Dec 26, 2025 08:00:00").getTime();
@@ -414,12 +483,15 @@
             const minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((dist % (1000 * 60)) / 1000);
 
-            const box = "bg-brand-dark text-white w-12 h-12 rounded flex flex-col items-center justify-center";
+            const box = "bg-brand-dark text-white w-12 h-12 md:w-16 md:h-16 rounded flex flex-col items-center justify-center";
+            const numStyle = "text-lg md:text-xl font-bold leading-none";
+            const labelStyle = "text-[8px] md:text-[10px] uppercase mt-1";
+            
             document.getElementById('countdown').innerHTML = `
-                <div class="${box}"><span class="text-lg font-bold leading-none">${days}</span><span class="text-[8px] uppercase">Hari</span></div>
-                <div class="${box}"><span class="text-lg font-bold leading-none">${hours}</span><span class="text-[8px] uppercase">Jam</span></div>
-                <div class="${box}"><span class="text-lg font-bold leading-none">${minutes}</span><span class="text-[8px] uppercase">Mnt</span></div>
-                <div class="${box}"><span class="text-lg font-bold leading-none">${seconds}</span><span class="text-[8px] uppercase">Dtk</span></div>
+                <div class="${box}"><span class="${numStyle}">${days}</span><span class="${labelStyle}">Hari</span></div>
+                <div class="${box}"><span class="${numStyle}">${hours}</span><span class="${labelStyle}">Jam</span></div>
+                <div class="${box}"><span class="${numStyle}">${minutes}</span><span class="${labelStyle}">Mnt</span></div>
+                <div class="${box}"><span class="${numStyle}">${seconds}</span><span class="${labelStyle}">Dtk</span></div>
             `;
         }, 1000);
 
